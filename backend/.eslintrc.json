@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+      "class-methods-use-this": "off",
+      "max-len": "off",
+      "no-param-reassign": "off",
+      "no-underscore-dangle": "off"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "globals": {
+      "use": true
+    }
+}

@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: backend
+    image: album-scrobbler-backend:latest
+    command: npm start
+    environment:
+      HOST: 0.0.0.0
+      PORT: 80
+      NODE_ENV: production
+      CACHE_VIEWS: "false"
+    env_file:
+      - backend/.env
+    ports:
+      - "8081:80"
+    links:
+      - postgresql
+    restart: always
+  frontend:
+    build:
+      context: frontend
+    image: album-scrobbler-frontend:latest
+    command: npm run serve
+    environment:
+      PORT: 80
+      NODE_ENV: production
+    env_file:
+      - frontend/.env
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: always
+  postgresql:
+    image: postgres:11.4-alpine
+    env_file:
+      - postgresql/.env
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgresql_data:
