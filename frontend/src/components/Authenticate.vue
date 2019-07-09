@@ -1,7 +1,7 @@
 <template>
   <div class="jumbotron">
     <h1>{{ title }}</h1>
-    <pulse-loader loading color="black"></pulse-loader>
+    <pulse-loader loading color="white"></pulse-loader>
   </div>
 </template>
 

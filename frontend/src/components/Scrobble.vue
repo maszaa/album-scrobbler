@@ -11,7 +11,7 @@
       <hr>
       <button :disabled="!readyToScrobble()" v-on:click="scrobbleTracks()" class="btn btn-danger">Scrobble</button>
     </div>
-    <pulse-loader :loading="$store.state.busy" color="black"></pulse-loader>
+    <pulse-loader :loading="$store.state.busy" color="white"></pulse-loader>
     <pre v-if="success" class="text-left font-weight-bold text-success">{{ success }}</pre>
     <pre v-if="error" class="text-left font-weight-bold text-danger">{{ error }}</pre>
     <div v-if="releaseFetched()">
