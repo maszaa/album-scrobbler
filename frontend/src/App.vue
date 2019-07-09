@@ -36,9 +36,8 @@ body {
   text-align: center;
   color: #ffffff;
   width: 60%;
-  min-width: 600px;
-  max-width: 1000px;
-  margin: 60px auto auto auto;
+  min-width: 300pt;
+  margin: 10px auto auto auto;
 }
 div.header {
   text-align: right !important;
