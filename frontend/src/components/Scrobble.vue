@@ -81,7 +81,7 @@ export default {
       try {
         this.album = await discogs.getRelease(this.releaseId)
       } catch (err) {
-        this.error = err
+        this.error = err.response ? err.response.data.message : err
       }
       this.$store.commit('toggleBusy', false)
     },
